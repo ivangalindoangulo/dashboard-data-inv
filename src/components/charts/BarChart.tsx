@@ -1,6 +1,7 @@
-import ReactECharts from 'echarts-for-react';
-import type { EChartsOption } from 'echarts'; // Tipo para las opciones
+import ReactECharts, { type EChartsOption } from 'echarts-for-react'; 
+import React, { useMemo } from 'react';
 import { cn } from "@/lib/utils" // Asumiendo que tienes la utilidad 'cn' de shadcn
+import { getCssVariableValue } from "@/lib/utils/get-css-variable";
 
 interface BarChartProps {
   options: EChartsOption;
@@ -31,23 +32,27 @@ export const BarChart: React.FC<BarChartProps> = ({ options, className }) => {
   );
 };
 
-// Componente de ejemplo para mostrar cómo se usa:
 export function SimpleBarChart() {
-  const chartOptions: EChartsOption = {
-    title: {
-      text: 'Ventas Trimestrales',
-      left: 'center',
+  // 1. Obtiene los valores de color DINÁMICOS del tema actual
+  const primaryColor = getCssVariableValue('primary');
+  const foregroundColor = getCssVariableValue('foreground');
+  const mutedForegroundColor = getCssVariableValue('muted-foreground');
+
+  const chartOptions = useMemo(() => ({
+    textStyle: {
+      color: foregroundColor,
     },
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: { type: 'shadow' }
-    },
+    backgroundColor: 'transparent',
     xAxis: {
       type: 'category',
       data: ['Q1', 'Q2', 'Q3', 'Q4'],
+      axisLine: { lineStyle: { color: mutedForegroundColor } }, 
+      axisLabel: { color: foregroundColor }
     },
     yAxis: {
       type: 'value',
+      axisLine: { lineStyle: { color: mutedForegroundColor } },
+      axisLabel: { color: foregroundColor }
     },
     series: [
       {
@@ -55,11 +60,11 @@ export function SimpleBarChart() {
         type: 'bar',
         data: [120, 200, 150, 80],
         itemStyle: {
-          color: '#83a5e8' // Puedes usar los colores de tu tema de Tailwind/Shadcn
-        }
+          color: primaryColor,
+        },
       },
     ],
-  };
+  }), [primaryColor, foregroundColor, mutedForegroundColor]); // ⬅️ Dependencias de color
 
   return (
     <BarChart
