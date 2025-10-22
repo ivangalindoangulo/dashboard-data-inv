@@ -1,12 +1,7 @@
-# Shadcn Admin Dashboard
+# Dashboard Data Inversion
 
-Admin Dashboard UI crafted with Shadcn and Vite. Built with responsiveness and accessibility in mind.
+Admin Dashboard UI crafted with Shadcn and Vite. 
 
-![alt text](public/images/shadcn-admin.png)
-
-I've been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I've created a few custom components, some of the code is directly adapted from ShadcnUI examples.
-
-> This is not a starter project (template) though. I'll probably make one in the future.
 
 ## Features
 
@@ -20,7 +15,7 @@ I've been creating dashboard UIs at work and for my personal projects. I always 
 - RTL support
 
 <details>
-<summary>Customized Components (click to expand)</summary>
+Customized Components (click to expand)
 
 This project uses Shadcn UI components, but some have been slightly modified for better RTL (Right-to-Left) support and other improvements. These customized components differ from the original Shadcn UI versions.
 
@@ -77,13 +72,13 @@ If you want to update components using the Shadcn CLI (e.g., `npx shadcn@latest 
 Clone the project
 
 ```bash
-  git clone https://github.com/satnaing/shadcn-admin.git
+  git clone https://github.com/ivangalindoangulo/dashboard-data-inv.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd shadcn-admin
+  cd dashboard-data-inv
 ```
 
 Install dependencies
@@ -98,19 +93,11 @@ Start the server
   pnpm run dev
 ```
 
-## Sponsoring this project ❤️
 
-If you find this project helpful or use this in your own work, consider [sponsoring me](https://github.com/sponsors/satnaing) to support development and maintenance. You can [buy me a coffee](https://buymeacoffee.com/satnaing) as well. Don’t worry, every penny helps. Thank you! 🙏
-
-For questions or sponsorship inquiries, feel free to reach out at [contact@satnaing.dev](mailto:contact@satnaing.dev).
-
-### Current Sponsor
-
-- [Clerk](https://go.clerk.com/GttUAaK) - for backing the implementation of Clerk in this project
 
 ## Author
 
-Crafted with 🤍 by [@satnaing](https://github.com/satnaing)
+Ivan Galindo
 
 ## License
 
