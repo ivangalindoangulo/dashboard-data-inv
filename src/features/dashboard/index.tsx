@@ -16,6 +16,7 @@ import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
 import { Analytics } from './components/analytics'
 import { Overview } from './components/overview'
+import { Reports } from './components/reports'
 import { RecentSales } from './components/recent-sales'
 
 export function Dashboard() {
@@ -49,9 +50,7 @@ export function Dashboard() {
             <TabsList>
               <TabsTrigger value='overview'>Overview</TabsTrigger>
               <TabsTrigger value='analytics'>Analytics</TabsTrigger>
-              <TabsTrigger value='reports'>
-                Reports
-              </TabsTrigger>
+              <TabsTrigger value='reports'>Reports</TabsTrigger>
               <TabsTrigger value='notifications' disabled>
                 Notifications
               </TabsTrigger>
@@ -185,6 +184,9 @@ export function Dashboard() {
           </TabsContent>
           <TabsContent value='analytics' className='space-y-4'>
             <Analytics />
+          </TabsContent>
+          <TabsContent value='reports' className='space-y-4'>
+            <Reports />
           </TabsContent>
         </Tabs>
       </Main>
