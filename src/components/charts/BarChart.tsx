@@ -1,5 +1,5 @@
-import ReactECharts, { type EChartsOption } from 'echarts-for-react'; 
-import React, { useMemo } from 'react';
+// src/components/charts/BarChart.tsx
+import ReactECharts, { type EChartsOption } from 'echarts-for-react';
 import { cn } from "@/lib/utils" // Asumiendo que tienes la utilidad 'cn' de shadcn
 import { getCssVariableValue } from "@/lib/utils/get-css-variable";
 
@@ -38,16 +38,20 @@ export function SimpleBarChart() {
   const foregroundColor = getCssVariableValue('foreground');
   const mutedForegroundColor = getCssVariableValue('muted-foreground');
 
-  const chartOptions = useMemo(() => ({
+  const chartOptions: EChartsOption = {
+    // ...
+    // Aplica el color del texto general del tema (para tooltip, leyenda, etc.)
     textStyle: {
       color: foregroundColor,
     },
+    // Fondo transparente para usar el color de fondo de la Card de Shadcn
     backgroundColor: 'transparent',
+    // ...
     xAxis: {
       type: 'category',
       data: ['Q1', 'Q2', 'Q3', 'Q4'],
-      axisLine: { lineStyle: { color: mutedForegroundColor } }, 
-      axisLabel: { color: foregroundColor }
+      axisLine: { lineStyle: { color: mutedForegroundColor } }, // Línea del eje
+      axisLabel: { color: foregroundColor } // Etiquetas del eje
     },
     yAxis: {
       type: 'value',
@@ -60,11 +64,12 @@ export function SimpleBarChart() {
         type: 'bar',
         data: [120, 200, 150, 80],
         itemStyle: {
-          color: primaryColor,
+          color: primaryColor, // ⬅️ **¡Aquí se aplica el color principal del tema!**
         },
       },
+      // Puedes usar otros colores: getCssVariableValue('secondary'), etc.
     ],
-  }), [primaryColor, foregroundColor, mutedForegroundColor]); // ⬅️ Dependencias de color
+  };
 
   return (
     <BarChart
