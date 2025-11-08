@@ -201,7 +201,7 @@ const topNav = [
     isActive: true,
     disabled: false,
   },
-  {
+  /*{
     title: 'Customers',
     href: 'dashboard/customers',
     isActive: false,
@@ -218,5 +218,5 @@ const topNav = [
     href: 'dashboard/settings',
     isActive: false,
     disabled: true,
-  },
+  },*/
 ]

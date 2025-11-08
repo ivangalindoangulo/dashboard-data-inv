@@ -18,8 +18,8 @@ import {
   Users,
   MessagesSquare,
   ShieldCheck,
-  AudioWaveform,
-  Command,
+  //AudioWaveform,
+  //Command,
   GalleryVerticalEnd,
 } from 'lucide-react'
 import { ClerkLogo } from '@/assets/clerk-logo'
@@ -27,8 +27,8 @@ import { type SidebarData } from '../types'
 
 export const sidebarData: SidebarData = {
   user: {
-    name: 'satnaing',
-    email: 'satnaingdev@gmail.com',
+    name: 'Data Inv',
+    email: 'datainversionplus@gmail.com',
     avatar: '/avatars/shadcn.jpg',
   },
   teams: [
